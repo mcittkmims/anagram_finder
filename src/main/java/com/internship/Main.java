@@ -1,14 +1,19 @@
 package com.internship;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import com.internship.io.InputReadable;
+import com.internship.io.OutputWriteable;
+import com.internship.io.TextFileReader;
+import com.internship.io.TextFileWriter;
+
+import java.nio.file.Paths;
+
 
 public class Main {
     public static void main(String[] args) {
-        List<String> words = new ArrayList<>(Arrays.asList("act", "cat" , "tree" , "race" , "care" , "acre" , "bee"));
-        Map<String, List<String>> result = AnagramFinder.findAnagrams(words);
-        System.out.println(result);
+        InputReadable fileReader = new TextFileReader(Paths.get("src/main/resources/input.txt"));
+        OutputWriteable fileWriter = new TextFileWriter(Paths.get("src/main/resources/output.txt"));
+
+        fileWriter.writeAnagrams(AnagramFinder.findAnagrams(fileReader.getWords()));
+
     }
 }
