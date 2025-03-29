@@ -2,6 +2,8 @@ package com.internship;
 
 import com.internship.io.InputReadable;
 import com.internship.io.OutputWriteable;
+import com.internship.logic.AnagramFinder;
+import com.internship.logic.Histogram;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Processor {
 
     public void execute(){
         try(Stream<String> words = inputReader.getWords()){
-            Map<String, List<String>> anagramPairs = AnagramFinder.findAnagrams(words);
+            Map<Histogram, List<String>> anagramPairs = AnagramFinder.findAnagrams(words);
             this.outputWriter.writeAnagrams(anagramPairs);
         } catch(IOException e) {
             e.printStackTrace();
