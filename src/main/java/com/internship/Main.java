@@ -16,7 +16,5 @@ public class Main {
 
         Processor processor = new Processor(fileReader, fileWriter);
         processor.execute();
-
-
     }
 }
