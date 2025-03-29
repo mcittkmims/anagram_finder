@@ -15,14 +15,12 @@ public class TextFileWriter implements OutputWriteable{
     }
 
     @Override
-    public void writeAnagrams(Map<String, List<String>> anagramPairs) {
+    public void writeAnagrams(Map<String, List<String>> anagramPairs) throws IOException{
         try (BufferedWriter writer = Files.newBufferedWriter(this.path)) {
             for(List<String> anagramPair: anagramPairs.values()){
                 writer.write(String.join(" ",anagramPair));
                 writer.newLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

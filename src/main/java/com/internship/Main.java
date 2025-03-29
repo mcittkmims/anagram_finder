@@ -14,7 +14,8 @@ public class Main {
         InputReadable fileReader = new TextFileReader(Paths.get(PathConstants.INPUT_PATH));
         OutputWriteable fileWriter = new TextFileWriter(Paths.get(PathConstants.OUTPUT_PATH));
 
-        fileWriter.writeAnagrams(AnagramFinder.findAnagrams(fileReader.getWords()));
+        Processor processor = new Processor(fileReader, fileWriter);
+        processor.execute();
 
 
     }

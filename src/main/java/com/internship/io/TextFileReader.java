@@ -1,11 +1,9 @@
 package com.internship.io;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Stream;
 
 public class TextFileReader implements InputReadable{
 
@@ -16,12 +14,7 @@ public class TextFileReader implements InputReadable{
     }
 
     @Override
-    public List<String> getWords() {
-        try {
-            return Files.readAllLines(path, StandardCharsets.UTF_8);
-        } catch (IOException e){
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
+    public Stream<String> getWords() throws IOException{
+        return Files.lines(this.path);
     }
 }

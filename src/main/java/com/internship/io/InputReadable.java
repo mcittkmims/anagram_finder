@@ -2,7 +2,8 @@ package com.internship.io;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Stream;
 
 public interface InputReadable {
-    List<String> getWords();
+    Stream<String> getWords() throws IOException;
 }
