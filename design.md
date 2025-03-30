@@ -12,6 +12,7 @@ I've explored two methods for this project:
 
 Even though the second method is more efficient in terms of time complexity, if we want to only find anagrams for short words, the first approach might be better because a string will take much less space than an array of int!
 
+
 ## Reading input and writing output
 
 For reading and writing I decided to separate the logic in 2 separate interfaces.
