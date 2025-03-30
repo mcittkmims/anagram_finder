@@ -30,4 +30,12 @@ public class Processor {
         }
 
     }
+
+    public void setInputReader(InputReadable inputReader) {
+        this.inputReader = inputReader;
+    }
+
+    public void setOutputWriter(OutputWriteable outputWriter) {
+        this.outputWriter = outputWriter;
+    }
 }
