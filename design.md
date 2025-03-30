@@ -15,20 +15,20 @@ Even though the second method is more efficient in terms of time complexity, if 
 
 ## Reading input and writing output
 
-For reading and writing I decided to separate the logic in 2 separate interfaces.
+For reading and writing I decided to separate the logic in 2 separate interfaces:
 
-### InputReadable Interface
-This interface has a method `getWords()` which has to be implemented.
+ - ### InputReadable Interface
+   This interface has a method `getWords()` which was implemented by:
 
-The reading class `TextFileReader` implements `InputReadable`, it reads from a file using **streams**, this decision was made so the whole file isn't stored in memory at once, thus preventing memory overload for very large files.
+     - The reading class `TextFileReader` implements `InputReadable`, it reads from a file using **streams**, this decision was made so the whole file isn't stored in memory at once, thus preventing memory overload for very large files.
 
 
-### OutputWriteable Interface
-This interface has a method `writeAnagrams()` which has to be implemented.
+ - ### OutputWriteable Interface
+    This interface has a method `writeAnagrams()` which was implemented by:
 
-The first writing class `ConsoleWriter` just writes the words from a **Map** into the console.
+     - The first writing class `ConsoleWriter` just writes the words from a **Map** into the console.
 
-The second writing class `TextFileWriter` writes in the output file using the **buffered writing** method, which allows for the data to be written incrementally in a file. I chose this method for better performance in case of very large numbers of words to be written in a file!
+     - The second writing class `TextFileWriter` writes in the output file using the **buffered writing** method, which allows for the data to be written incrementally in a file. I chose this method for better performance in case of very large numbers of words to be written in a file!
 
 ## Design Principles
 

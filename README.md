@@ -1,6 +1,11 @@
-# Instructions
+# Anagram Finder
 
-### Clone Git Reposetory
+#### This is a project for an admission process at an internship. It efficiently finds anagrams with a O(n) time complexity by leveraging histograms. More about the implementation and design [here](./design.md).
+
+
+## Instructions
+
+### Clone Git Repository
 
 Clone the repository in the location you want from the terminal with:
 ```bash
