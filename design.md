@@ -1,4 +1,4 @@
-# Design Overview
+# Design Decisions
 
 While building this project, I tried to focus on both performance and SOLID principles.
 
@@ -26,7 +26,7 @@ For reading and writing I decided to separate the logic in 2 separate interfaces
  - ### OutputWriteable Interface
     This interface has a method `writeAnagrams()` which was implemented by:
 
-     - The first writing class `ConsoleWriter` just writes the words from a **Map** into the console.
+     - The first writing class `ConsoleWriter` just writes the words from a **Collection** into the console.
 
      - The second writing class `TextFileWriter` writes in the output file using the **buffered writing** method, which allows for the data to be written incrementally in a file. I chose this method for better performance in case of very large numbers of words to be written in a file!
 
@@ -42,3 +42,4 @@ For better **readability**, **maintainability** and  **scalability**, I tried to
 
 I organized the classes into different packages to enhance **modularity**, **maintainability**, and **readability**. The `com.internship.io` contains all the **classes** and **interfaces** related to **input** and **output** operations. `com.internship.logic` contains the algorithm implementation **class**, and `com.internship.utils` contains a **Data Class**.
 
+# Scalability Considerations

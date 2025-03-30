@@ -5,7 +5,6 @@ import com.internship.utils.PathConstants;
 
 import java.nio.file.Paths;
 
-
 public class Main {
     public static void main(String[] args) {
         InputReadable fileReader = new TextFileReader(Paths.get(PathConstants.INPUT_PATH));
