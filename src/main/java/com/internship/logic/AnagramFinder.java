@@ -15,6 +15,10 @@ public class AnagramFinder {
         return pairedAnagrams;
     }
 
+    public static Map<Histogram, List<String>> findAnagrams(List<String> words) {
+        return findAnagrams(words.stream());
+    }
+
 
 
 }

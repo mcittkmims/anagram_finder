@@ -29,7 +29,7 @@ Before running the project, build it with the following command:
 mvn clean install
 ```
 
-This will compile the project, run any tests, and package it for execution.
+This will compile the project and package it for execution.
 
 ### Run the project
 
