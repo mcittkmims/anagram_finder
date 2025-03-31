@@ -1,6 +1,6 @@
 # Design Decisions
 
-While building this project, I tried to focus on both performance and SOLID principles.
+While building this project, I tried to focus on both performance and **SOLID** principles.
 
 ## Algorithm
 
@@ -32,7 +32,7 @@ For reading and writing I decided to separate the logic in 2 separate interfaces
 
 ## Design Principles
 
-For better **readability**, **maintainability** and  **scalability**, I tried to develop my solution with the SOLID principles in mind:
+For better **readability**, **maintainability** and  **scalability**, I tried to develop my solution with the **SOLID** principles in mind:
 
 - All the classes inside my solution have a single clear responsibility.
 - Created **small interfaces** for both reading the **input** and **writing** the output. This allows for other **input** and **output** sources, like a database or other type of file to be implemented.
@@ -43,3 +43,22 @@ For better **readability**, **maintainability** and  **scalability**, I tried to
 I organized the classes into different packages to enhance **modularity**, **maintainability**, and **readability**. The `com.internship.io` contains all the **classes** and **interfaces** related to **input** and **output** operations. `com.internship.logic` contains the algorithm implementation **class**, and `com.internship.utils` contains a **Data Class**.
 
 # Scalability Considerations
+
+## 10 million words
+
+In terms of performance, my solution depends on the length of the words. If words are on average 8 characters long, then working with **Histograms** requires more resources than working with **sorted** **Strings**. However, if we talk about long strings instead of simple words, the **Histogram** becomes way more efficient. 
+
+Another point to consider is that heap memory is limited on my device, and it might not be enough to process 10 million words.
+
+## 100 billion words
+
+For the solution to work I would need to use a database. Instead of storing all the words inside a HashMap, I would store them in a database, which would fix the problem of heap memory overhead.
+
+Another change I would make is to change my algorithm with a hybrid one. In case the word is short I could use the sorting of strings approach, but if the length of the string is over a fixed threshold it could use a Histogram!
+
+## Scaling
+
+To scale my solution to work with large databases, I would create a dedicated **Store** **Interface** for working with a database. Based on this **Interface** I would change my solution to work with objects that implement the respective interface.
+
+Creating this interface will allow me to **decouple** the interaction about **storing** from my solution, which means that it will work with any **storing mechanism** as long it implements the required methods.
+

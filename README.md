@@ -1,7 +1,8 @@
 # Anagram Finder
 
-#### This is a project for an admission process at an internship. It efficiently finds anagrams with a O(n) time complexity by leveraging histograms. More about the implementation and design [here](./design.md).
+**This is a project for an admission process at an internship. It efficiently finds anagrams with a O(n) time complexity by leveraging histograms. More about the implementation and design [here](./design.md).**
 
+----
 
 ## Instructions
 
